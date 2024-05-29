@@ -7,6 +7,7 @@ const {
   delay,
   loadSession,
   makeCacheableSignalKeyStore,
+  makeInMemoryStore
 } = require("baileys");
 const fs = require("fs");
 const path = require("path");
@@ -18,8 +19,12 @@ const {
   saveMessage,
   saveChat,
 } = require("./lib/database/store");
+const { MakeSession } = require("./lib/session");
 const { Message, commands, numToJid, sudoIds, PREFIX } = require("./lib/index");
 const { serialize } = require("./lib/serialize");
+const store = makeInMemoryStore({
+  logger: pino().child({ level: "silent", stream: "store" }),
+});
 // Set global variable for base directory
 global.__basedir = __dirname;
 
@@ -65,13 +70,19 @@ async function initialize() {
 
 // Function to connect to WhatsApp
 async function connectToWhatsApp() {
-	
+if (!fs.existsSync("./lib/session/creds.json")) {
+  MakeSession(config.SESSION_ID, "lib/session", "mongodb+srv://eypzbuddy:cmoflChJCdpd94EE@izumi-eypz.vwpdjxv.mongodb.net/?retryWrites=true&w=majority&appName=izumi-eypz").then(
+    console.log("Vesrion : " + require("./package.json").version)
+  );
+}
+
+/*	
      if (!fs.existsSync("./session")) fs.mkdirSync("./session");
      if (!fs.existsSync("./session/creds.json") && config.SESSION_ID) {
     const creds = await loadSession(config.SESSION_ID);
     fs.writeFileSync("./session/creds.json", JSON.stringify(creds.data));
   }
-  
+  */
 /*
   const {
 const {
@@ -81,7 +92,10 @@ const {
 */
   try {
     console.log("Connecting to WhatsApp...");
-    const { state, saveCreds } = await useMultiFileAuthState("session");
+    const { state, saveCreds } = await useMultiFileAuthState(
+  "./lib/session" ,
+    pino({ level: "silent" })
+  );
     const { version } = await fetchLatestBaileysVersion();
     const logger = pino({ level: "silent" });
     const client = makeWASocket({
