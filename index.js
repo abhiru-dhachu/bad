@@ -74,6 +74,7 @@ if (!fs.existsSync(".lib/session")) fs.mkdirSync(".lib/session");
      if (!fs.existsSync(".lib/session/creds.json") && config.SESSION_ID) {
      const { data } = await axios(`https://pastebin.com/raw/${config.SESSION_ID}`);
      await fs.writeFileSync(".lib/session/creds.json", JSON.stringify(data));
+     }
   try {
     console.log("Connecting to WhatsApp...");
     const { state, saveCreds } = await useMultiFileAuthState(
@@ -140,6 +141,10 @@ if (!fs.existsSync(".lib/session")) fs.mkdirSync(".lib/session");
         message.data.key.remoteJid !== "status@broadcast"
       )
         await client.readMessages([message.data.key]);
+        const isBot = (message.fromMe && message.id.startsWith('BAE5') && message.id.length == 12) || (message.fromMe && message.id.startsWith('BAE5') && message.id.length === 16);
+if (!(!isBot || (isBot && message.text && /(kick|warn|dlt)$/.test(message.text)))) {
+    return;
+}
       commands.map(async (command) => {
         const messageType = {
           image: "imageMessage",
