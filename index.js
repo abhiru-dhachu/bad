@@ -71,16 +71,18 @@ async function initialize() {
 
 // Function to connect to WhatsApp
 async function connectToWhatsApp() {
-     if (!fs.existsSync(".lib/session/creds.json") && config.SESSION_ID) {
-     const { data } = await axios(`https://pastebin.com/raw/${config.SESSION_ID}`);
-     await fs.writeFileSync(".lib/session/creds.json", JSON.stringify(data));
-     }
+    if (!fs.existsSync("./lib/session/creds.json")) {
+  MakeSession(config.SESSION_ID, "lib/session").then(
+    console.log("Vesrion : " + require("./package.json").version)
+  );
+}
   try {
     console.log("Connecting to WhatsApp...");
-    const { state, saveCreds } = await useMultiFileAuthState(
-  "./lib/session" ,
-    pino({ level: "silent" })
-  );
+    const {
+    state,
+    saveCreds
+  } = await useMultiFileAuthState("./lib/session/");
+
     const { version } = await fetchLatestBaileysVersion();
     const logger = pino({ level: "silent" });
     const client = makeWASocket({
