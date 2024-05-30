@@ -17,12 +17,12 @@ const DATABASE_URL = process.env.DATABASE_URL === undefined ? './database.db' : 
 DEBUG = process.env.DEBUG === undefined ? false : convertToBool(process.env.DEBUG);
 // Export configuration variables
 module.exports = {
-  HANDLERS: (process.env.HANDLERS || '^[.,!]').trim(),
+  HANDLERS: (process.env.PREFIX || '^[.,!]').trim(),
   MODE: (process.env.MODE || 'private').toLowerCase(),
   ERROR_MSG: toBool(process.env.ERROR_MSG) || true,
   LOG_MSG: toBool(process.env.LOG_MSG) || true,
   READ_CMD: toBool(process.env.READ_CMD),
-  SESSION_ID: process.env.SESSION_ID || "IZUMI-XDIow0v82BtA7uj4CAOU4vA",
+  SESSION_ID: process.env.SESSION_ID || null,
   READ_MSG: toBool(process.env.READ_MSG),
   OWNER_NAME: process.env.OWNER_NAME || "Mask Ser",
   BOT_NAME: process.env.BOT_NAME || "Mask-md",

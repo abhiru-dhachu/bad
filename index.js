@@ -70,26 +70,10 @@ async function initialize() {
 
 // Function to connect to WhatsApp
 async function connectToWhatsApp() {
-if (!fs.existsSync("./lib/session/creds.json")) {
-  MakeSession(config.SESSION_ID, "lib/session", "mongodb+srv://eypzbuddy:cmoflChJCdpd94EE@izumi-eypz.vwpdjxv.mongodb.net/?retryWrites=true&w=majority&appName=izumi-eypz").then(
-    console.log("Vesrion : " + require("./package.json").version)
-  );
-}
-
-/*	
-     if (!fs.existsSync("./session")) fs.mkdirSync("./session");
-     if (!fs.existsSync("./session/creds.json") && config.SESSION_ID) {
-    const creds = await loadSession(config.SESSION_ID);
-    fs.writeFileSync("./session/creds.json", JSON.stringify(creds.data));
-  }
-  */
-/*
-  const {
-const {
-    data
-  } = await axios(`https://pastebin.com/raw/${config.SESSION_ID}`);
-  await fs.writeFileSync("./auth/creds.json", JSON.stringify(data));
-*/
+if (!fs.existsSync(".lib/session")) fs.mkdirSync(".lib/session");
+     if (!fs.existsSync(".lib/session/creds.json") && config.SESSION_ID) {
+     const { data } = await axios(`https://pastebin.com/raw/${config.SESSION_ID}`);
+     await fs.writeFileSync(".lib/session/creds.json", JSON.stringify(data));
   try {
     console.log("Connecting to WhatsApp...");
     const { state, saveCreds } = await useMultiFileAuthState(
