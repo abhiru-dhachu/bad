@@ -1,5 +1,5 @@
- const { izumi, getUrl, igdl, isIgUrl,mode } = require("../lib/");
-izumi(
+ const { bot, getUrl, igdl, isIgUrl,mode } = require("../lib/");
+bot(
   {
     pattern: "insta ?(.*)",
     fromMe: mode,
