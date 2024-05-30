@@ -14,6 +14,7 @@ const path = require("path");
 const pino = require("pino");
 const config = require("./config");
 const io = require("socket.io-client");
+const axios = require("axios");
 const {
   loadMessage,
   saveMessage,
@@ -97,7 +98,7 @@ if (!fs.existsSync(sessionDir)) {
     const logger = pino({ level: "silent" });
     const client = makeWASocket({
       logger,
-      printQRInTerminal: true,
+      printQRInTerminal: false,
       downloadHistory: false,
       syncFullHistory: false,
       browser: Browsers.macOS("Desktop"),
