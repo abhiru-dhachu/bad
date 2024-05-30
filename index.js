@@ -70,11 +70,23 @@ async function initialize() {
 
 // Function to connect to WhatsApp
 async function connectToWhatsApp() {
-if (!fs.existsSync(".lib/session")) fs.mkdirSync(".lib/session");
-     if (!fs.existsSync(".lib/session/creds.json") && config.SESSION_ID) {
-     const { data } = await axios(`https://pastebin.com/raw/${config.SESSION_ID}`);
-     await fs.writeFileSync(".lib/session/creds.json", JSON.stringify(data));
-     }
+const sessionDir = path.resolve(__dirname, '.lib/session');
+const sessionFilePath = path.join(sessionDir, 'creds.json');
+
+if (!fs.existsSync(sessionDir)) {
+    fs.mkdirSync(sessionDir, { recursive: true });
+}
+
+(async () => {
+    if (!fs.existsSync(sessionFilePath) && config.SESSION_ID) {
+        try {
+            const { data } = await axios(`https://pastebin.com/raw/${config.SESSION_ID}`);
+            fs.writeFileSync(sessionFilePath, JSON.stringify(data));
+        } catch (error) {
+            console.error('Error fetching or writing session data:', error);
+        }
+    }
+})();
   try {
     console.log("Connecting to WhatsApp...");
     const { state, saveCreds } = await useMultiFileAuthState(
