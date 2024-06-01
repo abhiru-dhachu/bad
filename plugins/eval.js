@@ -29,7 +29,8 @@ const {
 	Imgur,
 	numToJid,
 	sudoIds,
-	postJson	
+	postJson,
+	Imgbb
 } = require("../lib/");
 const util = require('util');
 const {     StoreDB,
