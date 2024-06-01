@@ -28,6 +28,8 @@
     "jsdom": "^22.1.0",
     "jsqr": "^1.4.0",
     "libphonenumber-js": "^1.11.2",
+    "imgbb-uploader": "^1.5.1",
+    "imgur": "^2.2.0",
     "node-cron": "^3.0.3",
     "node-fetch": "2.6.1",
     "node-webpmux": "^3.1.7",
