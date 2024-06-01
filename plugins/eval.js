@@ -33,6 +33,7 @@ const {
 	Imgbb
 } = require("../lib/");
 const util = require('util');
+const { Sequelize, DataTypes } = require('sequelize');
 const {     StoreDB,
     getstore,
     storeWriteToDB,
