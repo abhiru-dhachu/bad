@@ -85,6 +85,8 @@ async function connectToWhatsApp() {
     saveCreds
   } = await useMultiFileAuthState("./lib/session/");
 */
+  try {
+    console.log("Connecting to WhatsApp...");
   const {
       state: sessionState,
       saveCreds: saveCredentials
