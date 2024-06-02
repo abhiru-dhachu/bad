@@ -26,6 +26,7 @@
     "jimp": "^0.16.13",
     "jsdom": "^22.1.0",
     "jsqr": "^1.4.0",
+    "heroku-client": "^3.1.0",
     "libphonenumber-js": "^1.11.2",
     "imgbb-uploader": "^1.5.1",
     "imgur": "^2.2.0",
