@@ -248,7 +248,7 @@ bot(
         }
         await git.push("heroku", Config.BRANCH);
 
-        await message.sendreply("UPDATED");
+        await message.reply("UPDATED");
       } else {
         git.pull(async (err, update) => {
           if (update && update.summary.changes) {
