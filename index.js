@@ -88,8 +88,8 @@ async function connectToWhatsApp() {
   try {
     console.log("Connecting to WhatsApp...");
   const {
-      state: sessionState,
-      saveCreds: saveCredentials
+      state,
+      saveCreds
     } = await getSession("baileys_auth_info");
 
 
