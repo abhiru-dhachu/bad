@@ -12,6 +12,11 @@ const fs = require("fs");
 const path = require("path");
 const pino = require("pino");
 const config = require("./config");
+const {
+  loadMessage,
+  saveMessage,
+  saveChat,
+} = require("./lib/database/store");
 const { MakeSession } = require("./lib/session");
 const { Message, commands, numToJid, PREFIX } = require("./lib/index");
 const { serialize } = require("./lib/serialize");
