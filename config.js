@@ -18,7 +18,7 @@ DEBUG = process.env.DEBUG === undefined ? false : convertToBool(process.env.DEBU
 // Export configuration variables
 module.exports = {
   HANDLERS: (process.env.PREFIX || '^[.,!]').trim(),
-  BRANCH: "main",
+  BRANCH: "master",
   MODE: (process.env.MODE || 'private').toLowerCase(),
   ERROR_MSG: toBool(process.env.ERROR_MSG) || true,
   LOG_MSG: toBool(process.env.LOG_MSG) || true,
