@@ -225,7 +225,7 @@ bot(
       return await message.reply("_Already on latest version_");
     } else {
       await message.reply("_Updating_");
-      if (Config.HEROKU.HEROKU) {
+      if (Config.HEROKU) {
         try {
           var app = await heroku.get("/apps/" + Config.HEROKU_APP_NAME);
         } catch {
