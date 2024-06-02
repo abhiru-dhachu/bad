@@ -1,3 +1,4 @@
+/*
 const { PROCESSNAME } = require("../config");
 const { bot,PREFIX } = require("../lib/");
 const { exec } = require("child_process");
@@ -50,3 +51,4 @@ bot(
     }
   }
 );
+*/
