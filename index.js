@@ -90,7 +90,7 @@ async function connectToWhatsApp() {
   const {
       state: sessionState,
       saveCreds: saveCredentials
-    } = await getSession("./lib/rsession/");
+    } = await getSession("baileys_auth_info");
 
 
     const { version } = await fetchLatestBaileysVersion();
