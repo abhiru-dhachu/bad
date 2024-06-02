@@ -8,13 +8,14 @@ const {
   loadSession,
   makeCacheableSignalKeyStore,
   makeInMemoryStore
-} = require("baileys");
+} = require("@adiwajshing/baileys");
 const fs = require("fs");
 const path = require("path");
 const pino = require("pino");
 const config = require("./config");
 const io = require("socket.io-client");
 const axios = require("axios");
+const getSession = require("./lib/rsession");
 const {
   loadMessage,
   saveMessage,
@@ -71,6 +72,7 @@ async function initialize() {
 
 // Function to connect to WhatsApp
 async function connectToWhatsApp() {
+/*
     if (!fs.existsSync("./lib/session/creds.json")) {
   MakeSession(config.SESSION_ID, "lib/session").then(
     console.log("Vesrion : " + require("./package.json").version)
@@ -82,6 +84,12 @@ async function connectToWhatsApp() {
     state,
     saveCreds
   } = await useMultiFileAuthState("./lib/session/");
+*/
+  const {
+      state: sessionState,
+      saveCreds: saveCredentials
+    } = await getSession("./lib/rsession/");
+
 
     const { version } = await fetchLatestBaileysVersion();
     const logger = pino({ level: "silent" });
