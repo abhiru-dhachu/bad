@@ -31,6 +31,8 @@ module.exports = {
   PROCESSNAME: process.env.PROCESSNAME || "Mask-md",
   AUTHOR: process.env.AUTHOR || "Mask ser",
   DELETED_LOG_CHAT: process.env.DELETED_LOG_CHAT || false,
+  HEROKU_APP_NAME: process.env.HEROKU_APP_NAME || "",
+  HEROKU_API_KEY: process.env.HEROKU_API_KEY || "",
   DATABASE_URL: DATABASE_URL,
   DATABASE:
        DATABASE_URL === './database.db' ? new Sequelize({dialect: 'sqlite', storage: DATABASE_URL, logging: false,}) : new Sequelize(DATABASE_URL, {dialect: 'postgres', ssl: true, protocol: 'postgres', dialectOptions: {native: true, ssl: { require: true, rejectUnauthorized: false },}, logging: false,}),
