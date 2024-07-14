@@ -1,5 +1,5 @@
 const { Rudhra, mode, commands, PREFIX } = require("../lib");
-const { OWNER_NAME, Rudhra_NAME } = require("../config");
+const { OWNER_NAME, BOT_NAME } = require("../config");
 const { hostname } = require("os");
 
 Rudhra(
@@ -27,7 +27,7 @@ Description: ${i.desc}\`\`\``);
       let [date, time] = new Date()
         .toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
         .split(",");
-      let menu = `╭━━━━━ᆫ ${Rudhra_NAME} ᄀ━━━
+      let menu = `╭━━━━━ᆫ ${BOT_NAME} ᄀ━━━
 ┃ ⎆  *OWNER*:  ${OWNER_NAME}
 ┃ ⎆  *PREFIX*: ${PREFIX}
 ┃ ⎆  *HOST NAME*: ${hostname().split("-")[0]}
