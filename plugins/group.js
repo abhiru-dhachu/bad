@@ -1,5 +1,5 @@
-const { bot,mode,isAdmin,sleep } = require("../lib/");
- bot(
+const { Rudhra,mode,isAdmin,sleep } = require("../lib/");
+ Rudhra(
   {
     pattern: "promote ?(.*)",
     fromMe: mode,
@@ -25,7 +25,7 @@ const { bot,mode,isAdmin,sleep } = require("../lib/");
     });
   }
 );
-bot(
+Rudhra(
   {
     pattern: "demote ?(.*)",
     fromMe: mode,
@@ -54,7 +54,7 @@ bot(
     );
   }
 );
-bot(
+Rudhra(
   {
     pattern: "mute ?(.*)",
     fromMe: true,
@@ -79,7 +79,7 @@ bot(
     await message.send('*Group unmuted.*');   
   }
 );
-bot(
+Rudhra(
   {
     pattern: "unmute ?(.*)",
     fromMe: true,
@@ -104,7 +104,7 @@ bot(
     await message.send('*Group closed.*');   
   }
 );
-bot(
+Rudhra(
   {
     pattern: "getjids",
     fromMe: mode,
@@ -124,7 +124,7 @@ bot(
     message.send(str);
   }
 );
-bot(
+Rudhra(
   {
     pattern: "tagall",
     fromMe: mode,
@@ -143,7 +143,7 @@ bot(
     });
   }
 );
- bot(
+ Rudhra(
   {
     pattern: "tag ?(.*)",
     fromMe: mode,

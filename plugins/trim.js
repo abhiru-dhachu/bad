@@ -1,6 +1,6 @@
  const { fromBuffer } = require("file-type");
-const { bot,mode,ffmpeg,parseTimeToSeconds } = require("../lib/");
-bot(
+const { Rudhra,mode,ffmpeg,parseTimeToSeconds } = require("../lib/");
+Rudhra(
   {
     pattern: "trim ?(.*)",
     fromMe: mode,

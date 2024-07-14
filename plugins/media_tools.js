@@ -1,7 +1,7 @@
 const config = require("../config");
-const { bot, mode, toAudio } = require("../lib/");
+const { Rudhra, mode, toAudio } = require("../lib/");
 
-bot(
+Rudhra(
   {
     pattern: "photo",
     fromMe: mode,
@@ -16,7 +16,7 @@ bot(
     return await message.sendMessage(message.jid, buff, {}, "image");
   }
 );
- bot({
+ Rudhra({
   pattern: "mp3",
   fromMe: mode,
   desc: "converts video/voice to mp3",

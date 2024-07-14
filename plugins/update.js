@@ -1,15 +1,15 @@
 /*
 const { PROCESSNAME } = require("../config");
-const { bot,PREFIX } = require("../lib/");
+const { Rudhra,PREFIX } = require("../lib/");
 const { exec } = require("child_process");
 const simplegit = require("simple-git");
 const git = simplegit();
 
-bot(
+Rudhra(
   {
     pattern: 'update ?(.*)',
     fromMe: true,
-    desc: "Update the bot",
+    desc: "Update the Rudhra",
     type: "user",
   },
   async (message, match) => {

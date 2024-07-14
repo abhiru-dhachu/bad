@@ -1,5 +1,5 @@
- const { bot, getUrl, igdl, isIgUrl,mode } = require("../lib/");
-bot(
+ const { Rudhra, getUrl, igdl, isIgUrl,mode } = require("../lib/");
+Rudhra(
   {
     pattern: "insta ?(.*)",
     fromMe: mode,

@@ -1,7 +1,7 @@
- const { bot,mode, serialize } = require("../lib/");
+ const { Rudhra,mode, serialize } = require("../lib/");
 const { loadMessage } = require("../lib/database/store");
 
-bot(
+Rudhra(
   {
     pattern: "quoted",
     fromMe: mode,
@@ -14,7 +14,7 @@ bot(
     let msg = await loadMessage(key.id);
     if (!msg)
       return await message.reply(
-        "_Message not found maybe bot might not be running at that time_"
+        "_Message not found maybe Rudhra might not be running at that time_"
       );
     msg = await serialize(
       JSON.parse(JSON.stringify(msg.message)),

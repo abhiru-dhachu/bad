@@ -1,6 +1,6 @@
-const { bot, mode, qrcode, readQr } = require('../lib/');
+const { Rudhra, mode, qrcode, readQr } = require('../lib/');
 
-bot(
+Rudhra(
   {
     pattern: "qr ?(.*)",
     fromMe: mode,

@@ -1,6 +1,6 @@
-const { bot, mode, parsedUrl } = require("../lib/");
+const { Rudhra, mode, parsedUrl } = require("../lib/");
 
-bot(
+Rudhra(
   {
     pattern: "upload ?(.*)",
     fromMe: mode,

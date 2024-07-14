@@ -1,9 +1,9 @@
 const {
-	bot,
+	Rudhra,
 	commands,
 	mode
 } = require("../lib/");
-bot({
+Rudhra({
 	pattern: 'list$',
 	fromMe: mode,
 	dontAddCommandList: true

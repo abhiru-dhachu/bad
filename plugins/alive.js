@@ -1,9 +1,9 @@
-const { bot, mode, formatTime } = require('../lib/');
+const { Rudhra, mode, formatTime } = require('../lib/');
 
- bot({
+ Rudhra({
 	pattern: 'ping ?(.*)',
 	fromMe: mode,
-	desc: 'Bot response in second.',
+	desc: 'Rudhra response in second.',
 	type: 'info'
 }, async (message, match, client) => {
 	var start = new Date().getTime();
@@ -13,7 +13,7 @@ const { bot, mode, formatTime } = require('../lib/');
 	await msg.edit(`*Pong!*\nLatency: ${responseTime}ms`);
 });
 
-bot({
+Rudhra({
 	pattern: 'jid',
 	fromMe: mode,
 	desc: 'To get remoteJid',
@@ -22,10 +22,10 @@ bot({
 	await message.send(message.mention[0] ? message.mention[0] : message.quoted ? message.quoted.sender : message.chat)
 });
 
-bot({
+Rudhra({
 	pattern: 'runtime',
 	fromMe: mode,
-	desc: 'Get bots runtime',
+	desc: 'Get Rudhras runtime',
 	type: 'info'
 }, async (message, match, client) => {
 	await message.reply(formatTime(process.uptime()));

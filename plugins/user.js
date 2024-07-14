@@ -1,5 +1,5 @@
-const { bot,mode, isAdmin ,parsedJid} = require("../lib");
-bot(
+const { Rudhra,mode, isAdmin ,parsedJid} = require("../lib");
+Rudhra(
   {
     pattern: 'block ?(.*)',
     fromMe: true,
@@ -24,7 +24,7 @@ bot(
   }
 );
 
-bot(
+Rudhra(
   {
     pattern: "unblock",
     fromMe: true,

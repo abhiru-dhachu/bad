@@ -1,8 +1,8 @@
-const { bot, mode, commands, PREFIX } = require("../lib");
-const { OWNER_NAME, BOT_NAME } = require("../config");
+const { Rudhra, mode, commands, PREFIX } = require("../lib");
+const { OWNER_NAME, Rudhra_NAME } = require("../config");
 const { hostname } = require("os");
 
-bot(
+Rudhra(
   {
     pattern: "menu ?(.*)",
     fromMe: true,
@@ -18,7 +18,7 @@ bot(
           i.pattern.test(`${PREFIX}` + match)
         ) {
           const cmdName = i.pattern.toString().split(/\W+/)[1];
-          message.reply(`\`\`\`bot: ${PREFIX}${cmdName.trim()}
+          message.reply(`\`\`\`Rudhra: ${PREFIX}${cmdName.trim()}
 Description: ${i.desc}\`\`\``);
         }
       }
@@ -27,7 +27,7 @@ Description: ${i.desc}\`\`\``);
       let [date, time] = new Date()
         .toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
         .split(",");
-      let menu = `╭━━━━━ᆫ ${BOT_NAME} ᄀ━━━
+      let menu = `╭━━━━━ᆫ ${Rudhra_NAME} ᄀ━━━
 ┃ ⎆  *OWNER*:  ${OWNER_NAME}
 ┃ ⎆  *PREFIX*: ${PREFIX}
 ┃ ⎆  *HOST NAME*: ${hostname().split("-")[0]}
@@ -38,13 +38,13 @@ Description: ${i.desc}\`\`\``);
       let cmnd = [];
       let cmd;
       let category = [];
-      commands.map((bot, num) => {
-        if (bot.pattern instanceof RegExp) {
-          cmd = bot.pattern.toString().split(/\W+/)[1];
+      commands.map((Rudhra, num) => {
+        if (Rudhra.pattern instanceof RegExp) {
+          cmd = Rudhra.pattern.toString().split(/\W+/)[1];
         }
 
-        if (!bot.dontAddCommandList && cmd !== undefined) {
-          let type = bot.type ? bot.type.toLowerCase() : "misc";
+        if (!Rudhra.dontAddCommandList && cmd !== undefined) {
+          let type = Rudhra.type ? Rudhra.type.toLowerCase() : "misc";
 
           cmnd.push({ cmd, type });
 

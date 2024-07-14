@@ -1,13 +1,13 @@
 const got = require("got");
 const Heroku = require("heroku-client");
-const { bot,secondsToDHMS } = require("../lib/");
+const { Rudhra,secondsToDHMS } = require("../lib/");
 const Config = require("../config");
 const heroku = new Heroku({ token: Config.HEROKU_API_KEY });
 const baseURI = "/apps/" + Config.HEROKU_APP_NAME;
 const simpleGit = require("simple-git");
 const git = simpleGit();
 const exec = require("child_process").exec;
-bot(
+Rudhra(
   {
     pattern: "restart$",
     fromMe: true,
@@ -21,7 +21,7 @@ bot(
     });
   }
 );
-bot(
+Rudhra(
   {
     pattern: "shutdown$",
     fromMe: true,
@@ -44,7 +44,7 @@ bot(
       });
   }
 );
-bot(
+Rudhra(
   {
     pattern: "dyno$",
     fromMe: true,
@@ -80,7 +80,7 @@ Remaning    : ${secondsToDHMS(remaining)}`;
     }
   }
 );
-bot(
+Rudhra(
   {
     pattern: "setvar ?(.*)",
     fromMe: true,
@@ -108,7 +108,7 @@ bot(
   }
 );
 
-bot(
+Rudhra(
   {
     pattern: "delvar ?(.*)",
     fromMe: true,
@@ -136,7 +136,7 @@ bot(
       });
   }
 );
-bot(
+Rudhra(
   {
     pattern: "getvar ?(.*)",
     fromMe: true,
@@ -161,7 +161,7 @@ bot(
       });
   }
 );
-bot(
+Rudhra(
   {
     pattern: "allvar$",
     fromMe: true,
@@ -183,7 +183,7 @@ bot(
       });
   }
 );
-bot(
+Rudhra(
   {
     pattern: "update$",
     fromMe: true,
@@ -211,12 +211,12 @@ bot(
     }
   }
 );
-bot(
+Rudhra(
   {
     pattern: "update now$",
     fromMe: true,
     dontAddCommandList: true,
-    desc: "Updates the Bot",
+    desc: "Updates the Rudhra",
   },
   async (message) => {
     await git.fetch();

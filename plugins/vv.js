@@ -1,5 +1,5 @@
-const { bot,mode } = require('../lib/');
-bot(
+const { Rudhra,mode } = require('../lib/');
+Rudhra(
   {
     pattern: "vv",
     fromMe: mode,

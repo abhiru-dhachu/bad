@@ -1,9 +1,9 @@
-const { bot, mode} = require('../lib/');
+const { Rudhra, mode} = require('../lib/');
 
-bot({
+Rudhra({
 	pattern: 'reboot',
 	fromMe: mode,
-	desc: 'Bot restart',
+	desc: 'Rudhra restart',
 	type: 'system'
 }, async (message, match, client) => {
 await message.send("_rebooting_");

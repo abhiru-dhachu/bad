@@ -1,5 +1,5 @@
-const { bot,mode,aiImage } = require("../lib/");
-bot(
+const { Rudhra,mode,aiImage } = require("../lib/");
+Rudhra(
   {
     pattern: "genimage ?(.*)",
     fromMe: mode,

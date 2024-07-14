@@ -1,9 +1,9 @@
-const { bot, mode } = require('../lib/');
+const { Rudhra, mode } = require('../lib/');
 const fs = require('fs');
 const got = require("got");
 const Db = require('../lib/database/plugin');
 
-bot({
+Rudhra({
 	pattern: 'plugin ?(.*)',
 	fromMe: mode,
 	desc: 'new plugin installer',
@@ -46,7 +46,7 @@ bot({
     }
   }
 );
-bot({
+Rudhra({
 	pattern: 'plugin list',
 	fromMe: mode,
 	desc: 'shows plugins',
@@ -70,7 +70,7 @@ bot({
   }
 );
 
-bot({
+Rudhra({
 	pattern: "remove(?: |$)(.*)",
 	fromMe: mode,
 	desc: 'remove plugin',

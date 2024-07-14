@@ -1,5 +1,5 @@
 const {
-  bot,
+  Rudhra,
   mode,
   isUrl,
   AddMp3Meta,
@@ -10,7 +10,7 @@ const {
 ytsdl,
 parsedUrl 
 } = require("../lib");
-bot(
+Rudhra(
   {
     pattern: "yta ?(.*)",
     fromMe: mode,
@@ -35,7 +35,7 @@ let link = await parsedUrl(match)
     );
   }
 );
-bot(
+Rudhra(
   {
     pattern: "ytv ?(.*)",
     fromMe: mode,
@@ -60,7 +60,7 @@ bot(
   }
 );
 
-bot(
+Rudhra(
   {
     pattern: "song ?(.*)",
     fromMe: mode,
@@ -84,7 +84,7 @@ bot(
   }
 );
 
-bot(
+Rudhra(
   {
     pattern: "video ?(.*)",
     fromMe: mode,

@@ -1,7 +1,7 @@
-const { bot,mode } = require("../lib/");
+const { Rudhra,mode } = require("../lib/");
 const { listall } = require("../lib/fancy");
 
-bot(
+Rudhra(
   {
     pattern: "fancy ?(.*)",
     fromMe: mode,

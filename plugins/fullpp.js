@@ -1,7 +1,7 @@
- const { bot,mode} = require("../lib/");
+ const { Rudhra,mode} = require("../lib/");
 const Jimp = require("jimp");
 
-bot(
+Rudhra(
   {
     pattern: "fullpp$",
     fromMe: mode,
@@ -16,7 +16,7 @@ bot(
     return await message.reply("_Profile Picture Updated_");
   }
 );
- bot(
+ Rudhra(
   {
     pattern: "gpp$",
     fromMe: mode,

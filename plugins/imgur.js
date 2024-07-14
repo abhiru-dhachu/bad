@@ -1,10 +1,10 @@
  const {
-	bot,
+	Rudhra,
 	Imgur,
 	mode
 } = require("../lib/");
 const ffmpeg = require('fluent-ffmpeg');
-bot({
+Rudhra({
 	pattern: 'url ?(.*)',
 	fromMe: mode,
 	desc: 'upload files to imgur.com',

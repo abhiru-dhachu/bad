@@ -1,6 +1,6 @@
 const config = require("../config");
-const { bot, mode, toAudio,webp2mp4 } = require("../lib/");
-bot(
+const { Rudhra, mode, toAudio,webp2mp4 } = require("../lib/");
+Rudhra(
   {
     pattern: "sticker",
     fromMe: mode,
@@ -26,7 +26,7 @@ bot(
     );
   }
 );
- bot(
+ Rudhra(
   {
     pattern: "take ?(.*)",
     fromMe: mode,

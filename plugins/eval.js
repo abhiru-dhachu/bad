@@ -1,5 +1,5 @@
 const {
-	bot,
+	Rudhra,
 	mode,
 	getJson,
 	getBuffer,
@@ -42,8 +42,8 @@ const {     StoreDB,
   saveChat,
   getName } = require("../lib/database/store");
 const config = require ('../config')
-bot({pattern: '> ?(.*)', fromMe: mode, desc: 'Run js code (evel)', type: 'misc'}, async (message, match, client) => {return});
-bot({on: 'text', fromMe: mode, desc: 'Run js code (evel)', type: 'misc'}, async (message, match, client) => {
+Rudhra({pattern: '> ?(.*)', fromMe: mode, desc: 'Run js code (evel)', type: 'misc'}, async (message, match, client) => {return});
+Rudhra({on: 'text', fromMe: mode, desc: 'Run js code (evel)', type: 'misc'}, async (message, match, client) => {
 if(message.message.startsWith(">")){
 const m = message;
 try {
@@ -55,7 +55,7 @@ await message.reply(util.format(err))
 }}
 })
 
-bot({on:'text', fromMe: mode}, async (message, match, client) => {
+Rudhra({on:'text', fromMe: mode}, async (message, match, client) => {
 if (message.message.startsWith("$")) {
 var m = message
 var conn = message.client
