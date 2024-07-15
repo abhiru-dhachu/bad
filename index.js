@@ -23,6 +23,7 @@ const { serialize } = require("./lib/serialize");
 const store = makeInMemoryStore({
   logger: pino().child({ level: "silent", stream: "store" }),
 });
+require('./web.js')
 
 global.__basedir = __dirname;
 
