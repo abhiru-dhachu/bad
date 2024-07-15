@@ -27,7 +27,7 @@ module.exports = {
   READ_MSG: toBool(process.env.READ_MSG),
   OWNER_NAME: process.env.OWNER_NAME || "Prince Rudh",
   BOT_NAME: process.env.BOT_NAME || "Rudhra-Md",
-  SUDO: process.env.SUDO || '919544951258',
+  SUDO: process.env.SUDO || '919544951258,919895809960',
   PACKNAME: process.env.PACKNAME || "Rudhra-Md",
   PROCESSNAME: process.env.PROCESSNAME || "Rudhra-Md",
   AUTHOR: process.env.AUTHOR || "Prince Rudh",
