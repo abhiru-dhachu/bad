@@ -1,6 +1,6 @@
 {
-  "name": "Mask-md",
-  "version": "1.6.0",
+  "name": "Rudhra-md",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "code": "node lib/pcode.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Mask ser",
+  "author": "Prince Rudh",
   "license": "ISC",
   "dependencies": {
   "@adiwajshing/baileys": "git+https://github.com/mask-sir/Baileys.js.git",
