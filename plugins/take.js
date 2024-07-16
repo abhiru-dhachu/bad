@@ -1,4 +1,5 @@
 const { Rudhra, mode, toAudio, webp2mp4, addExif, AddMp3Meta, getBuffer } = require("../lib/");
+const config = require("../config");
 Rudhra({
   pattern: "take ?(.*)",
   fromMe: mode,
