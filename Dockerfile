@@ -1,4 +1,4 @@
-FROM quay.io/mask_ser/mask-md:latest
+FROM quay.io/prince_rudh/rudhra:latest
 
 RUN git clone https://github.com/abhiru-dhachu/bad /root/bot
 WORKDIR /root/bot/
