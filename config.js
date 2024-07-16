@@ -28,7 +28,7 @@ module.exports = {
   OWNER_NAME: process.env.OWNER_NAME || "Prince Rudh",
   BOT_NAME: process.env.BOT_NAME || "Rudhra-Md",
   SUDO: process.env.SUDO || '919544951258,919895809960',
-  PACKNAME: process.env.PACKNAME || "Rudhra-Md",
+  STICKER_PACKNAME: process.env.PACKNAME || "Rudhra-Md, prince Rudh",
   PROCESSNAME: process.env.PROCESSNAME || "Rudhra-Md",
   AUTHOR: process.env.AUTHOR || "Prince Rudh",
   DELETED_LOG_CHAT: process.env.DELETED_LOG_CHAT || false,
